@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.sri.dao.EmploeedaoImpl;
 import com.sri.dao.EmployeeDao;
 import com.sri.data.Employeetwo;
+import com.sri.service.EmployeeServiceImpl;
 
 @Controller
 public class HomeController {
 
 	@Autowired
-	EmploeedaoImpl emploeedaoImpl;
+	EmployeeServiceImpl employeeServiceImpl;
 
 	@GetMapping("/hi")
 	public String hello(Model model) {
@@ -46,7 +47,7 @@ public class HomeController {
 
 		model.addAttribute("em", new Employeetwo());
 
-		System.out.println(emploeedaoImpl.getAll());
+		System.out.println(employeeServiceImpl.getAll());
 
 		return "form";
 	}
